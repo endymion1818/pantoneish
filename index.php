@@ -7,6 +7,7 @@
 </head>
 <body>
 	Time now: <span id="timeOnLoad"><?php echo pantonish_time_now(); ?></span><br/>
+	Counting Up: <span id="counting"><?php echo pantonish_time_jsDate();?></span><br/>
 	<div id="countup">
 	  It's been
 	  <p id="days">00</p>
@@ -43,7 +44,7 @@
 		  clearTimeout(upTime.to);
 		  upTime.to=setTimeout(function(){ upTime(countTo); },1000);
 
-			upTime.innerHTML = clearTimeout;
+			document.getElementById('counting').innerHTML = '';
 		}
 	</script>
 </body>
