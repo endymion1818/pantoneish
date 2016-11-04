@@ -50,7 +50,7 @@
 		}
 	</style>
 </head>
-<body>
+<body id="background">
 	<div class="clock">
 		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 			 viewBox="0 0 960 960" style="enable-background:new 0 0 960 960;" xml:space="preserve">
@@ -84,28 +84,12 @@
 	<script language="JavaScript">
 		// clock
 		 var 
-		 	 background = document.getElementsByTagName('body');
+		 	 background = document.getElementById('background'),
 		 	 hours = document.getElementById('hours'),
 		 	 minutes = document.getElementById('minutes'),
 		 	 seconds = document.getElementById('seconds');
 
 		var pantones = [{"name":"Riverside","value":"#4d6a92"},{"name":"Airy Blue","value":"#93b6d6"},{"name":"Sharkskin","value":"#838488"},{"name":"Aurora Red","value":"#b93a33"},{"name":"Warm Teal","value":"#af9483"},{"name":"Dusty Cedar","value":"#ad5d5e"},{"name":"Lush Meadow","value":"#016e51"},{"name":"Spicy Mustard","value":"#d9ae46"},{"name":"Potter\'s Clay","value":"#9d4726"},{"name":"Bodacious","value":"#b66ba3"}];
-
-
-//		var colours = JSON.parse(pantones);
-
-//		console.log(colours.colour);
-
-		// for (var i = 0; i < pantones.length; i++){
-		//     var obj = pantones[i];
-		//     for (var key in obj){
-		//         var attrName = key;
-		//         var attrValue = obj[attrName];
-		//         var colour = (obj[key]);
-		//     }
-		// }
-
-		// console.log(colour);
 
 		window.requestAnimationFrame = window.requestAnimationFrame
 		                               || window.mozRequestAnimationFrame
@@ -120,9 +104,15 @@
 		 var minute_as_degree = clock.getMinutes() / 60 * 360
 		 var second_as_degree = ( clock.getSeconds() + clock.getMilliseconds()/1000 ) /60 * 360
 
+		 var seconds_as_tenth = clock.getSeconds() %10
+
+		 var seconds_as_arrayposition = pantones[seconds_as_tenth].value;
+
 		 hours.style.transform = 'rotate(' + hour_as_degree + 'deg)';
 		 minutes.style.transform = 'rotate(' + minute_as_degree + 'deg)';
 		 seconds.style.transform = 'rotate(' + second_as_degree + 'deg)';
+
+		 background.style.backgroundColor = 'color: ' + seconds_as_arrayposition;
 
 		 requestAnimationFrame(updateclock) 
 		};
