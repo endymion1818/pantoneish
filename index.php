@@ -8,17 +8,8 @@
 	}
 	?>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Pantoneish</title>
 	<style>
-		html.js #hours {
-			x: 485;
-			y: 100;
-		}
-		@keyframes rotate {
-		  100% {
-		    transform: rotateZ(360deg);
-		  }
-		}
 		body {
 			transition: background-color 0.25s ease-in-out;
 			margin: 0;
@@ -28,12 +19,20 @@
 			justify-content: center;
 			position: relative;
 
+			font-family: trebuchet, sans-serif;
 		}
 		.info {
 			position: absolute;
 			bottom: 0;
 			right: 0;
-			padding: 1em;
+			padding: 1em 2em;
+			text-align: right;
+		}
+		h1 {
+			margin-bottom: .2em;
+		}
+		h2 {
+			margin-top: .2em;
 		}
 		svg {
 			padding: 4em;
@@ -87,7 +86,8 @@
 		</svg>
 	</div>
 	<div class="info">
-		<h1 id="pantone"></h1>
+		<h1>Pantone color:</h1>
+		<h2 id="pantone"></h2>
 	</div>
 
 	<script language="JavaScript">
