@@ -26,28 +26,34 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			position: relative;
+
 		}
-		.timer {
+		.info {
 			position: absolute;
-			bottom: 2%;
-			right: 2%;
-		}
-		div.clock {
-			
+			bottom: 0;
+			right: 0;
+			padding: 1em;
 		}
 		svg {
 			padding: 4em;
-			width: 60vw;
+			width: 40vw;
 			height: auto;
 		}
-		#hours {
-			transform-origin: bottom;
-		}
-		#minutes {
-			transform-origin: bottom;
-		}
+		#hours,
+		#minutes,
 		#seconds {
 			transform-origin: bottom;
+		}
+		@media(min-width: 1500px){
+			svg {
+				width: 40vw;
+			}
+		}
+		@media(min-height: 800px){
+			svg {
+				height: 80vh;
+			}
 		}
 	</style>
 </head>
@@ -80,8 +86,9 @@
 		<rect x="465.1" y="248.7" width="30.2" height="229.6" id="hours"/>
 		</svg>
 	</div>
-	<div class="timer"><?= pantonish_time_now() ?></div>
-	<div id="pantone"></div>
+	<div class="info">
+		<h1 id="pantone"></h1>
+	</div>
 
 	<script language="JavaScript">
 		// clock
