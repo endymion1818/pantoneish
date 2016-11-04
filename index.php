@@ -10,6 +10,10 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
+		html.js #hours {
+			x: 485;
+			y: 100;
+		}
 		@keyframes rotate {
 		  100% {
 		    transform: rotateZ(360deg);
@@ -18,6 +22,9 @@
 		body {
 			margin: 0;
 			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 		.timer {
 			position: absolute;
@@ -25,9 +32,7 @@
 			right: 2%;
 		}
 		div.clock {
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			
 		}
 		svg {
 			padding: 4em;
@@ -99,7 +104,6 @@
 		};
 
 		requestAnimationFrame(updateclock)
-
 
 	</script>
 </body>
