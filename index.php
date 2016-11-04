@@ -20,6 +20,7 @@
 		  }
 		}
 		body {
+			transition: background-color 0.25s ease-in-out;
 			margin: 0;
 			height: 100vh;
 			display: flex;
@@ -80,6 +81,7 @@
 		</svg>
 	</div>
 	<div class="timer"><?= pantonish_time_now() ?></div>
+	<div id="pantone"></div>
 
 	<script language="JavaScript">
 		// clock
@@ -87,7 +89,8 @@
 		 	 background = document.getElementById('background'),
 		 	 hours = document.getElementById('hours'),
 		 	 minutes = document.getElementById('minutes'),
-		 	 seconds = document.getElementById('seconds');
+		 	 seconds = document.getElementById('seconds'),
+		 	 pantone = document.getElementById('pantone');
 
 		var pantones = [{"name":"Riverside","value":"#4d6a92"},{"name":"Airy Blue","value":"#93b6d6"},{"name":"Sharkskin","value":"#838488"},{"name":"Aurora Red","value":"#b93a33"},{"name":"Warm Teal","value":"#af9483"},{"name":"Dusty Cedar","value":"#ad5d5e"},{"name":"Lush Meadow","value":"#016e51"},{"name":"Spicy Mustard","value":"#d9ae46"},{"name":"Potter\'s Clay","value":"#9d4726"},{"name":"Bodacious","value":"#b66ba3"}];
 
@@ -112,7 +115,9 @@
 		 minutes.style.transform = 'rotate(' + minute_as_degree + 'deg)';
 		 seconds.style.transform = 'rotate(' + second_as_degree + 'deg)';
 
-		 background.style.backgroundColor = 'color: ' + seconds_as_arrayposition;
+		 background.style.backgroundColor = seconds_as_arrayposition;
+
+		 pantone.innerHTML = pantones[seconds_as_tenth].name;
 
 		 requestAnimationFrame(updateclock) 
 		};
