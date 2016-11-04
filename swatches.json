@@ -1,0 +1,42 @@
+{
+  "riverside": {
+  	"name": "Riverside",
+  	"value": "#4d6a92"
+  },
+  "airyblue": {
+  	"name": "Airy Blue",
+  	"value": "#93b6d6"
+  },
+  "sharkskin": {
+  	"name": "Sharkskin",
+  	"value": "#838488"
+  },
+  "aurorared": {
+  	"name": "Aurora Red",
+  	"value": "#b93a33"
+  },
+  "warmteal": {
+  	"name": "Warm Teal",
+  	"value": "#af9483"
+  },
+  "dustycedar": {
+  	"name": "Dusty Cedar",
+  	"value": "#ad5d5e"
+  },
+  "lushmeadow": {
+  	"name": "Lush Meadow",
+  	"value": "#016e51"
+  },
+  "spicymustard": {
+  	"name": "Spicy Mustard",
+  	"value": "#d9ae46"
+  },
+  "pottersclay": {
+  	"name": "Potter's Clay",
+  	"value": "#9d4726"
+  },
+  "bodacious": {
+  	"name": "Bodacious",
+  	"value": "#b66ba3"
+  }
+}

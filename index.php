@@ -74,19 +74,38 @@
 			<polygon points="61.8,252.4 74.7,229.9 160.1,279.4 147.1,301.9 	"/>
 			<polygon points="804.2,682.9 817.2,660.4 902.5,709.9 889.6,732.4 	"/>
 		</g>
-		<rect x="475.6" y="123.6" width="9" height="354.7" id="hours"/>
-		<rect x="0.3" y="0" class="st0" width="959.7" height="959.7" id="minutes"/>
-		<rect x="472.5" y="194" width="15.2" height="284.3" id="seconds"/>
-		<rect x="465.1" y="248.7" width="30.2" height="229.6" id="other"/>
+		<rect x="475.6" y="123.6" width="9" height="354.7" id="seconds"/>
+		<rect x="472.5" y="194" width="15.2" height="284.3" id="minutes"/>
+		<rect x="465.1" y="248.7" width="30.2" height="229.6" id="hours"/>
 		</svg>
 	</div>
 	<div class="timer"><?= pantonish_time_now() ?></div>
 
 	<script language="JavaScript">
 		// clock
-		 var hours = document.getElementById('hours'),
+		 var 
+		 	 background = document.getElementsByTagName('body');
+		 	 hours = document.getElementById('hours'),
 		 	 minutes = document.getElementById('minutes'),
 		 	 seconds = document.getElementById('seconds');
+
+		var pantones = [{"name":"Riverside","value":"#4d6a92"},{"name":"Airy Blue","value":"#93b6d6"},{"name":"Sharkskin","value":"#838488"},{"name":"Aurora Red","value":"#b93a33"},{"name":"Warm Teal","value":"#af9483"},{"name":"Dusty Cedar","value":"#ad5d5e"},{"name":"Lush Meadow","value":"#016e51"},{"name":"Spicy Mustard","value":"#d9ae46"},{"name":"Potter\'s Clay","value":"#9d4726"},{"name":"Bodacious","value":"#b66ba3"}];
+
+
+//		var colours = JSON.parse(pantones);
+
+//		console.log(colours.colour);
+
+		// for (var i = 0; i < pantones.length; i++){
+		//     var obj = pantones[i];
+		//     for (var key in obj){
+		//         var attrName = key;
+		//         var attrValue = obj[attrName];
+		//         var colour = (obj[key]);
+		//     }
+		// }
+
+		// console.log(colour);
 
 		window.requestAnimationFrame = window.requestAnimationFrame
 		                               || window.mozRequestAnimationFrame
@@ -100,9 +119,11 @@
 		 var hour_as_degree = ( clock.getHours() + clock.getMinutes()/60 ) / 12 * 360
 		 var minute_as_degree = clock.getMinutes() / 60 * 360
 		 var second_as_degree = ( clock.getSeconds() + clock.getMilliseconds()/1000 ) /60 * 360
+
 		 hours.style.transform = 'rotate(' + hour_as_degree + 'deg)';
 		 minutes.style.transform = 'rotate(' + minute_as_degree + 'deg)';
 		 seconds.style.transform = 'rotate(' + second_as_degree + 'deg)';
+
 		 requestAnimationFrame(updateclock) 
 		};
 
