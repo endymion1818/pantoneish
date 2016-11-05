@@ -92,14 +92,14 @@
 
 	<script language="JavaScript">
 		// clock
-		 var 
+		 var
 		 	 background = document.getElementById('background'),
 		 	 hours = document.getElementById('hours'),
 		 	 minutes = document.getElementById('minutes'),
 		 	 seconds = document.getElementById('seconds'),
 		 	 pantone = document.getElementById('pantone');
 
-		var pantones = [{"name":"Riverside","value":"#4d6a92"},{"name":"Airy Blue","value":"#93b6d6"},{"name":"Sharkskin","value":"#838488"},{"name":"Aurora Red","value":"#b93a33"},{"name":"Warm Teal","value":"#af9483"},{"name":"Dusty Cedar","value":"#ad5d5e"},{"name":"Lush Meadow","value":"#016e51"},{"name":"Spicy Mustard","value":"#d9ae46"},{"name":"Potter\'s Clay","value":"#9d4726"},{"name":"Bodacious","value":"#b66ba3"}];
+		var pantones = [{"name":"Riverside","value":"#4d6a92"},{"name":"Airy Blue","value":"#92B6D5"},{"name":"Sharkskin","value":"#838487"},{"name":"Aurora Red","value":"#B93A32"},{"name":"Warm Teal","value":"#af9483"},{"name":"Dusty Cedar","value":"#AD5D5D"},{"name":"Lush Meadow","value":"#006E51"},{"name":"Spicy Mustard","value":"#D8AE47"},{"name":"Potter\'s Clay","value":"#9E4624"},{"name":"Bodacious","value":"#B76BA3"}];
 
 		window.requestAnimationFrame = window.requestAnimationFrame
 		                               || window.mozRequestAnimationFrame
@@ -114,7 +114,9 @@
 		 var minute_as_degree = clock.getMinutes() / 60 * 360
 		 var second_as_degree = ( clock.getSeconds() + clock.getMilliseconds()/1000 ) /60 * 360
 
-		 var seconds_as_tenth = clock.getSeconds() %10
+		 var seconds_as_tenth = minute_as_degree % 7
+
+		 console.log(seconds_as_tenth);
 
 		 var seconds_as_arrayposition = pantones[seconds_as_tenth].value;
 
@@ -126,7 +128,7 @@
 
 		 pantone.innerHTML = pantones[seconds_as_tenth].name;
 
-		 requestAnimationFrame(updateclock) 
+		 requestAnimationFrame(updateclock)
 		};
 
 		requestAnimationFrame(updateclock)
