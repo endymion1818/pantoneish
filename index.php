@@ -114,7 +114,7 @@
 		 var minute_as_degree = clock.getMinutes() / 60 * 360
 		 var second_as_degree = ( clock.getSeconds() + clock.getMilliseconds()/1000 ) /60 * 360
 
-		 var seconds_as_tenth = minute_as_degree % 7
+		 var seconds_as_tenth = clock.getSeconds() % 10;
 
 		 console.log(seconds_as_tenth);
 
