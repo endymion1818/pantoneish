@@ -110,22 +110,21 @@
 
 		function updateclock(){
 		 var clock = new Date()
+		//  set hands
 		 var hour_as_degree = ( clock.getHours() + clock.getMinutes()/60 ) / 12 * 360
 		 var minute_as_degree = clock.getMinutes() / 60 * 360
 		 var second_as_degree = ( clock.getSeconds() + clock.getMilliseconds()/1000 ) /60 * 360
 
-		 var seconds_as_tenth = clock.getSeconds() % 10;
-
-		 console.log(seconds_as_tenth);
+		//  set colours
+		 var seconds_as_tenth = clock.getMinutes() % 10;
 
 		 var seconds_as_arrayposition = pantones[seconds_as_tenth].value;
-
 		 hours.style.transform = 'rotate(' + hour_as_degree + 'deg)';
 		 minutes.style.transform = 'rotate(' + minute_as_degree + 'deg)';
 		 seconds.style.transform = 'rotate(' + second_as_degree + 'deg)';
-
 		 background.style.backgroundColor = seconds_as_arrayposition;
 
+		//  name of colour
 		 pantone.innerHTML = pantones[seconds_as_tenth].name;
 
 		 requestAnimationFrame(updateclock)
